@@ -13,3 +13,7 @@ Contributors / Licensing
 Generally everything is LICENSE'D under the Apache 2 license by Abram Hindle.
 
 2023 Junhyeon Cho
+
+Resources
+=========
+Lee Taylor, Controlling fps with requestAnimationFrame? - https://stackoverflow.com/questions/19764018/controlling-fps-with-requestanimationframe
