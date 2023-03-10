@@ -31,7 +31,7 @@ var host = window.location.host;
 var context = canvas.getContext("2d", {alpha: false});
 var W = canvas.width  = window.innerWidth-6;
 var H = canvas.height = window.innerHeight-50;
-var indicatorColours = ['#ff0000', '#0000ff'];
+var indicatorColours = ['#ff0001', '#1000ff'];
 var counter = 0;
 var currentColor = '#ffffff';
 
@@ -98,6 +98,24 @@ function drawTools() {
         beginPath();
         fillStyle = '#222222';
         fillRect(0, 0, 100, 100);
+    }
+
+    with(context) {
+        beginPath();
+        fillStyle = '#ff0000';
+        fillRect(100, 0, 100, 100);
+    }
+
+    with(context) {
+        beginPath();
+        fillStyle = '#00ff00';
+        fillRect(200, 0, 100, 100);
+    }
+
+    with(context) {
+        beginPath();
+        fillStyle = '#0000ff';
+        fillRect(300, 0, 100, 100);
     }
 }
 
@@ -290,6 +308,11 @@ mouse = (function() {
 mouse.mousedowners.push(function(x,y,clicked,e) {
     addEntity('down',{'x':x,'y':y,'colour':indicatorColours[0]});
     if (x > 0 && x < 100 && y > 0 && y < 100) clearWorld();
+    // '#ff0000'
+    if (x > 100 && x < 200 && y > 0 && y < 100) currentColor = '#ff0000';
+    if (x > 200 && x < 300 && y > 0 && y < 100) currentColor = '#00ff00';
+    if (x > 300 && x < 400 && y > 0 && y < 100) currentColor = '#0000ff';
+
 
 });
 
